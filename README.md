@@ -11,6 +11,8 @@ Currently only standard BERT transformer encoder is available under this repo.
 * GPU compute capability: 7.0(V100) / 7.5(T4) or 8.0(A100)
 * Python >= 3.7
 
+Tested on: A100 + CUDA 11.6 + PyTorch 1.13.0+cu116 + Python 3.9.16
+
 ## Features
 * Support remove padding
 * Hand-written fused attention (for seqlen <= 128, with WMMA api)
