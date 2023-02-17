@@ -38,6 +38,7 @@ for precision in ${precisions[@]}; do
     nvidia-smi -q -i $gpu_card >${logdir}/gpuinfo.txt
 
     all_log="${logdir}/all-log.log"
+    echo "Writing results to ${all_log}"
     printf "%-15s%-15s%-15s%-15s\n" "Batch Size" "Seqlen" "Precision" "BT Latency (ms)" >$all_log
 
     for batch_size in ${batch_sizes[@]}; do
