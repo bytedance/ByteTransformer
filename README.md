@@ -30,7 +30,7 @@ Run the following code to generate test data
 ```bash
 cd build
 # bs seqlen heads head_size
-python3 bert_transformer_test.py 16 64 12 64 --avg_seqlen 32 --dtype fp16 --export-data
+python3 bert_transformer_test.py 16 64 12 64 --avg_seqlen 32 --dtype fp16 --export_data
 ```
 
 After test data generated (*.in, *.out files under current directory), then run
@@ -39,7 +39,7 @@ After test data generated (*.in, *.out files under current directory), then run
 ```
 
 ### Pytorch
-Use the same script, but without `--export-data` flag.
+Use the same script, but without `--export_data` flag.
 ```bash
 # bs seqlen heads head_size
 python3 bert_transformer_test.py 16 64 12 64 --avg_seqlen 32 --dtype fp16
