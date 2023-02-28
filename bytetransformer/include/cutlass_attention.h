@@ -131,7 +131,7 @@ class CutlassAttention : public Attention<OpType> {
 
   static bool check_seqlen_supported(int seqlen) {
     // only suppport unfused attention
-    return !(seqlen % 8) && seqlen <= 1024 && seqlen > 128;
+    return !(seqlen % 8) && seqlen <= 1024 && seqlen > 384;
   }
 
   void infer(AttentionInferParam infer_param) override;

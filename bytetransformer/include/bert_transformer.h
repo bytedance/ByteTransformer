@@ -148,7 +148,7 @@ class BertTransformer {
       if (arch_ == 70 && max_seq_len_ > 256)  // V100
         use_fused_attention_ = false;
 
-      else if (arch_ == 80 && max_seq_len_ > 128)  // A100
+      else if (arch_ == 80 && max_seq_len_ > 384)  // A100
         use_fused_attention_ = false;
 
       else if (arch_ == 86 && max_seq_len_ > 256)
