@@ -88,7 +88,7 @@ Tested on: A100 + CUDA 11.6 + PyTorch 1.13.0+cu116 + Python 3.9.16
 To build from source, run the following commands:
 ```bash
 mkdir build && cd build
-cmake -DDataType=FP16 -DBUILD_THS=ON -DCUDAARCHS="80" ..
+cmake -DCUDA_PATH=/usr/local/cuda -DDataType=FP16 -DBUILD_THS=ON -DCUDAARCHS="80" ..
 make
 ```
 

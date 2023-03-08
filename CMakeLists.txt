@@ -65,6 +65,7 @@ set(COMMON_HEADER_DIRS
   ${PROJECT_SOURCE_DIR}
   ${CUDA_PATH}/include
   ${CMAKE_CURRENT_BINARY_DIR}
+  ${PROJECT_SOURCE_DIR}/3rdparty/cutlass/tools/util/include/
   ${PROJECT_SOURCE_DIR}/3rdparty/cutlass/include
   ${PROJECT_SOURCE_DIR}/cutlass_contrib/include
 )

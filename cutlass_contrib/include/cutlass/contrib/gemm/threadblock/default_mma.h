@@ -47,8 +47,6 @@
 #include "cutlass/gemm/threadblock/default_mma_core_sm70.h"
 #include "cutlass/gemm/threadblock/default_mma_core_sm75.h"
 #include "cutlass/gemm/threadblock/default_mma_core_sm80.h"
-#include "cutlass/contrib/gemm/threadblock/mma_singlestage.h"
-#include "cutlass/contrib/gemm/threadblock/mma_pipelined.h"
 #include "cutlass/contrib/gemm/threadblock/mma_multistage.h"
 #include "cutlass/contrib/args_pack_def.h"
 
