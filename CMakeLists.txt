@@ -10,8 +10,10 @@ set(PYTHON_PATH "python" CACHE STRING "Python path")
 # find cuda
 find_package(CUDA)
 set(CUDA_HOME ${CUDA_TOOLKIT_ROOT_DIR} CACHE STRING "CUDA home path")
+list(APPEND CMAKE_MODULE_PATH ${CUDA_HOME}/lib)
 list(APPEND CMAKE_MODULE_PATH ${CUDA_HOME}/lib64)
 find_package(CUDA REQUIRED)
+set(CUDA_PATH ${CUDA_HOME})
 
 if (${CUDA_VERSION} GREATER_EQUAL 11.0)
   message(STATUS "Add DCUDA11_MODE")
@@ -66,10 +68,12 @@ set(COMMON_HEADER_DIRS
   ${CUDA_PATH}/include
   ${CMAKE_CURRENT_BINARY_DIR}
   ${PROJECT_SOURCE_DIR}/3rdparty/cutlass/include
+  ${PROJECT_SOURCE_DIR}/3rdparty/cutlass/tools/util/include
   ${PROJECT_SOURCE_DIR}/cutlass_contrib/include
 )
 
 set(COMMON_LIB_DIRS
+  ${CUDA_PATH}/lib
   ${CUDA_PATH}/lib64
 )
 
