@@ -87,6 +87,7 @@ Tested on: A100 + CUDA 11.6 + PyTorch 1.13.0+cu116 + Python 3.9.16
 ## Building from Source
 To build from source, run the following commands:
 ```bash
+git submodule update --init
 mkdir build && cd build
 cmake -DTORCH_CUDA_ARCH_LIST="8.0" -DDataType=FP16 -DBUILD_THS=ON -DCUDAARCHS="80" ..
 make

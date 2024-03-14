@@ -47,7 +47,7 @@ for precision in ${precisions[@]}; do
             avg_seqlen=$((seqlen * avg_seqlen_percent / 100))
             echo "processing batch_size ${batch_size} seqlen ${seqlen} avg_seqlen ${avg_seqlen}"
 
-            python bert_transformer_test.py ${batch_size} ${seqlen} ${head_num} ${head_size} --avg_seqlen=${avg_seqlen} --n_layers=${n_layers} --dtype=${precision} 2>&1 | tee $tmp_log
+            python3 bert_transformer_test.py ${batch_size} ${seqlen} ${head_num} ${head_size} --avg_seqlen=${avg_seqlen} --n_layers=${n_layers} --dtype=${precision} 2>&1 | tee $tmp_log
 
             bt_time=$(tail -n 1 ${tmp_log} | head -n 1 | awk '{print $3}')
 

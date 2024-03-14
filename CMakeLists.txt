@@ -5,7 +5,7 @@ option(BUILD_THS "Build in TorchScript class mode" OFF)
 
 add_definitions("-DCUTLASS_ATTENTION")
 
-set(PYTHON_PATH "python" CACHE STRING "Python path")
+set(PYTHON_PATH "python3" CACHE STRING "Python path")
 
 # find cuda
 find_package(CUDA)
@@ -80,7 +80,9 @@ set(COMMON_LIB_DIRS
 if(BUILD_THS)
   set(TORCH_CUDA_ARCH_LIST)
   foreach(ARCH ${CMAKE_CUDA_ARCHITECTURES})
-    if(ARCH STREQUAL "80")
+    if(ARCH STREQUAL "90")
+      list(APPEND TORCH_CUDA_ARCH_LIST "9.0")
+    elseif(ARCH STREQUAL "80")
       list(APPEND TORCH_CUDA_ARCH_LIST "8.0")
     elseif(ARCH STREQUAL "75")
       list(APPEND TORCH_CUDA_ARCH_LIST "7.5")
